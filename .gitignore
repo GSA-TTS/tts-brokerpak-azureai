@@ -6,3 +6,4 @@ cloud-service-broker
 csbmssqldbrunfailover.test
 .csb.db
 .vscode
+*.code-workspace
