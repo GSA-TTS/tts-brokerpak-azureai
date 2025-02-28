@@ -2,7 +2,7 @@
 # limitations under the License.
 ---
 version: 1
-name: csb-azure-ai-model
+name: tts-azure-ai-model
 id: 2b89aa85-00c8-4507-a74b-c8f7ce95bf27
 description: Manage Azure AI Models
 display_name: Azure AI Model
