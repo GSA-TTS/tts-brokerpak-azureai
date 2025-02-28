@@ -1,0 +1,4 @@
+model_name    = "gpt-4o"
+model_version = "2024-11-20"
+api_key       = "somethinglikeakey"
+endpoint_url  = "https://thisisnotreal.io"

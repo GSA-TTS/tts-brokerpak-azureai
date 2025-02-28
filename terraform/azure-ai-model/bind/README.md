@@ -2,9 +2,8 @@
 
 You can develop and test the OpenTofu (Terraform) code for binding in isolation from the broker context here.
 
-<!-- 
-1. Copy `tofu.tfvars-template` to `tofu.tfvars`, then edit the content appropriately. 
--->
+1. Copy `tofu.auto.tfvars-template` to `tofu.auto.tfvars`, then edit the content appropriately. 
+
 1. (For Azure services) Set these four environment variables:
 
     - ARM_SUBSCRIPTION_ID
