@@ -23,5 +23,5 @@ output "api_key" {
 # Construct a model endpoint URL referencing the deployment name
 output "endpoint_url" {
   description = "The constructed endpoint URL for the AI model"
-  value       = format("%s/openai/deployments/%s", module.avm_res_cognitiveservices_account.endpoint, var.model_name)
+  value       = format("%sopenai/deployments/%s", module.avm_res_cognitiveservices_account.endpoint, var.model_name)
 }
