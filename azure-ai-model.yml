@@ -16,9 +16,6 @@ plans:
     id: d9575f01-1d5b-4196-bea8-e0d59b6ccfd9
     description: "Basic plan for Azure AI Model"
     display_name: "Basic"
-    properties:
-      model_name: "default-model"
-      model_version: "latest"
 provision:
   plan_inputs:
   user_inputs:
@@ -36,7 +33,7 @@ provision:
       type: string
       default: latest
       details: |
-        The version of the AI model. Valid versions for each model are:
+        The version of the AI model. The default is `latest`. Valid versions for each model are:
 
         - `o1-preview`: `2024-09-12`
         - `o1-mini`: `2024-09-12`
