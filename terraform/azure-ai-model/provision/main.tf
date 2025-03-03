@@ -2,8 +2,7 @@
 
 # This ensures we have unique CAF compliant names for our resources.
 module "naming" {
-  source  = "Azure/naming/azurerm"
-  version = ">= 0.3.0"
+  source = "./azurerm-naming"
 }
 
 # This is required for resource modules
@@ -13,8 +12,7 @@ resource "azurerm_resource_group" "this" {
 }
 
 module "avm_res_cognitiveservices_account" {
-  source  = "Azure/avm-res-cognitiveservices-account/azurerm"
-  version = "0.6.0"
+  source = "./azurerm-avm-res-cognitiveservices-account"
 
   # Required configuration
   kind                = "OpenAI"
