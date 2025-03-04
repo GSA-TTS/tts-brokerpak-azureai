@@ -17,7 +17,7 @@ instanceid=$(uuidgen | tr "[A-Z]" "[a-z]")
 echo "Instance ID: $instanceid"
 
 # Start provisioning
-$csb client provision --config clientconfig.yml --planid $planid --serviceid $serviceid --instanceid $instanceid --params "{\"model_name\": \"gpt-4o\", \"model_version\": \"2024-11-20\"}"
+$csb client provision --config clientconfig.yml --planid $planid --serviceid $serviceid --instanceid $instanceid --params "{\"model_name\": \"gpt-4o\", \"model_version\": \"2024-08-06\"}"
 
 # Wait on provisioning to finish
 state=""
