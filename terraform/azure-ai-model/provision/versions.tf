@@ -9,11 +9,5 @@ terraform {
     random = {
       source = "registry.terraform.io/hashicorp/random"
     }
-    azapi = {
-      source = "registry.terraform.io/Azure/azapi"
-    }
-    modtm = {
-      source = "registry.terraform.io/Azure/modtm"
-    }
   }
 }

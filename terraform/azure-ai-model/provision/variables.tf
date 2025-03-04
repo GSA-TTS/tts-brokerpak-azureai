@@ -37,3 +37,8 @@ variable "labels" {
   type    = any
   default = {}
 }
+
+variable "instance_id" {
+  type        = string
+  description = "The GUID of the service instance being provisioned."
+}

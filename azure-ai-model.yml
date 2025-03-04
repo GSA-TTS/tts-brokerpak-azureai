@@ -60,6 +60,9 @@ provision:
       type: string
       details: Client secret for Azure principal
       default: ${config("azure.client_secret")}
+    - name: instance_id
+      type: string
+      default: ${request.instance_id}
   outputs:
     - field_name: service_name
       type: string
