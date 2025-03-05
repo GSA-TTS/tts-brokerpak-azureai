@@ -1,4 +1,4 @@
 api:
   user: broker
-  password: FC_2@8r_LcwufyqQiwc@9TE
+  password: local-development
   port: 8081
