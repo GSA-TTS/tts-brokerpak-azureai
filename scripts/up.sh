@@ -39,7 +39,7 @@ echo "Binding ID: $bindingid"
 touch "$workdir/bindings.txt"
 echo "$instanceid $bindingid" >> "$workdir/bindings.txt"
 
-# Update smtp-client with new credentials
+# Record new credentials for client testing
 $csb client bind --config clientconfig.yml --planid $planid --serviceid $serviceid --instanceid $instanceid --bindingid $bindingid | jq '.response.credentials' > "$workdir/credentials.json"
 
 echo "Done. Credentials saved to credentials.json for use with the client. GUIDs saved to instances.txt and bindings.txt. Deprovision later with down.sh."
