@@ -16,32 +16,24 @@ plans:
     id: d9575f01-1d5b-4196-bea8-e0d59b6ccfd9
     description: "Basic plan for Azure AI Model"
     display_name: "Basic"
-    properties:
-      model_name: "default-model"
-      model_version: "latest"
 provision:
   plan_inputs:
   user_inputs:
     - field_name: location
       type: string
-      default: eastus
-      details: The region to create the service in
+      default: eastus2
+      details: The Azure region to create the service in.
       constraints:
         pattern: "^[a-zA-Z0-9-]+$"
     - field_name: model_name
       type: string
-      details: The name of the AI model. Valid options are `o1-preview`, `o1-mini`, `gpt-4o`, `gpt-4o-mini`. The full list of models that are supported by Azure (but not necessarily supported yet by this brokerpak) is found in the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
+      details: The name of the AI model. Valid options are `o1-preview`, `o1-mini`, `gpt-4o`, `gpt-4o-mini`. The full list of models that are supported by Azure (but not necessarily supported yet by this brokerpak) is found in the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#global-standard-model-availability).
       required: true
     - field_name: model_version
       type: string
       default: latest
       details: |
-        The version of the AI model. Valid versions for each model are:
-
-        - `o1-preview`: `2024-09-12`
-        - `o1-mini`: `2024-09-12`
-        - `gpt-4o`: `2024-11-20`, `2024-08-06`, `2024-05-13`
-        - `gpt-4o-mini`: `2024-07-18`
+        The version of the AI model. Valid versions for each model are: <ul><li>`o1-preview`: `2024-09-12`</li><li>`o1-mini`: `2024-09-12`</li><li>`gpt-4o`: `2024-11-20`, `2024-08-06`, `2024-05-13`</li><li>`gpt-4o-mini`: `2024-07-18`</li></ul>Not all versions are available in all regions. See the [Azure Global standard model availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#global-standard-model-availability) table.
   computed_inputs:
     - name: labels
       default: ${json.marshal(request.default_labels)}
@@ -63,6 +55,9 @@ provision:
       type: string
       details: Client secret for Azure principal
       default: ${config("azure.client_secret")}
+    - name: instance_id
+      type: string
+      default: ${request.instance_id}
   outputs:
     - field_name: service_name
       type: string

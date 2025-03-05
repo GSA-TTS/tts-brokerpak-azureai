@@ -1,0 +1,4 @@
+api:
+  user: broker
+  password: local-development
+  port: 8081

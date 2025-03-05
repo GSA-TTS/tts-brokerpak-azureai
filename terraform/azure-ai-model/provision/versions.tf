@@ -3,8 +3,11 @@ terraform {
 
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
+      source  = "registry.terraform.io/hashicorp/azurerm"
       version = "< 5.0.0"
+    }
+    random = {
+      source = "registry.terraform.io/hashicorp/random"
     }
   }
 }
