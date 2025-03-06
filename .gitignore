@@ -6,3 +6,9 @@ cloud-service-broker
 csbmssqldbrunfailover.test
 .csb.db
 .vscode
+*.code-workspace
+terraform/azure-ai-model/provision/tofu.auto.tfvars
+terraform/azure-ai-model/provision/terraform.tfstate
+terraform/azure-ai-model/provision/.terraform.lock.hcl
+terraform/azure-ai-model/provision/.ash_history
+terraform/azure-ai-model/provision/.terraform

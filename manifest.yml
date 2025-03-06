@@ -18,50 +18,32 @@ version: 0.1.0
 metadata:
   author: VMware
 platforms:
-- os: linux
-  arch: amd64
-# - os: darwin
-#   arch: amd64
+  - os: linux
+    arch: amd64
+  - os: darwin
+    arch: arm64
 terraform_state_provider_replacements:
-  registry.terraform.io/cloud-service-broker/csbsqlserver: "cloudfoundry.org/cloud-service-broker/csbsqlserver"
-  registry.terraform.io/cloud-service-broker/csbmssqldbrunfailover: "cloudfoundry.org/cloud-service-broker/csbmssqldbrunfailover"
+  registry.opentofu.org/hashicorp/random: "registry.terraform.io/hashicorp/random"
+  registry.opentofu.org/hashicorp/azurerm: "registry.terraform.io/hashicorp/azurerm"
+  registry.opentofu.org/Azure/azapi: "registry.terraform.io/Azure/azapi"
 terraform_upgrade_path:
-- version: 1.9.0
+  - version: 1.8.2
 terraform_binaries:
-- name: tofu
-  version: 1.9.0
-  source: https://github.com/opentofu/opentofu/archive/v1.9.0.zip
-  default: true
-- name: terraform-provider-azurerm
-  version: 4.21.0
-  source: https://github.com/terraform-providers/terraform-provider-azurerm/archive/v4.21.0.zip
-- name: terraform-provider-random
-  version: 3.7.1
-  source: https://github.com/terraform-providers/terraform-provider-random/archive/v3.7.1.zip
-- name: terraform-provider-csbsqlserver
-  version: 1.0.41
-  source: https://github.com/cloudfoundry/terraform-provider-csbsqlserver/archive/v1.0.41.zip
-  provider: cloudfoundry.org/cloud-service-broker/csbsqlserver
-  url_template: https://github.com/cloudfoundry/${name}/releases/download/v${version}/${name}_${version}_${os}_${arch}.zip
-- name: terraform-provider-csbmssqldbrunfailover
-  version: 1.0.0
-  provider: cloudfoundry.org/cloud-service-broker/csbmssqldbrunfailover
-  url_template: ./providers/${name}/cloudfoundry.org/cloud-service-broker/csbmssqldbrunfailover/${version}/${os}_${arch}/terraform-provider-csbmssqldbrunfailover_v${version}
-- name: terraform-provider-csbpg
-  version: 1.2.49
-  source: https://github.com/cloudfoundry/terraform-provider-csbpg/archive/v1.2.49.zip
-  provider: cloudfoundry.org/cloud-service-broker/csbpg
-  url_template: https://github.com/cloudfoundry/${name}/releases/download/v${version}/${name}_${version}_${os}_${arch}.zip
+  - name: tofu
+    version: 1.8.2
+    source: https://github.com/opentofu/opentofu/archive/v1.8.2.zip
+    url_template: https://github.com/opentofu/opentofu/releases/download/v${version}/tofu_${version}_${os}_${arch}.zip
+    default: true
+  - name: terraform-provider-azurerm
+    version: 4.21.0
+    source: https://github.com/terraform-providers/terraform-provider-azurerm/archive/v4.21.0.zip
+  - name: terraform-provider-random
+    version: 3.7.1
+    source: https://github.com/terraform-providers/terraform-provider-random/archive/v3.7.1.zip
 env_config_mapping:
   ARM_SUBSCRIPTION_ID: azure.subscription_id
   ARM_TENANT_ID: azure.tenant_id
   ARM_CLIENT_ID: azure.client_id
   ARM_CLIENT_SECRET: azure.client_secret
-  MSSQL_DB_SERVER_CREDS: azure.mssql_db_server_creds
-  MSSQL_DB_FOG_SERVER_PAIR_CREDS: azure.mssql_db_fog_server_pair_creds
 service_definitions:
-- azure-redis.yml
-- azure-mongodb.yml
-- azure-mssql-db.yml
-- azure-mssql-db-failover-group.yml
-- azure-mssql-fog-run-failover.yml
+  - azure-ai-model.yml
