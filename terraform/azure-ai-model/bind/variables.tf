@@ -16,3 +16,8 @@ variable "api_key" {
 variable "endpoint_url" {
   description = "The constructed endpoint URL for the AI model."
 }
+
+variable "deployment_name" {
+  type        = string
+  description = "The name of the Azure Cognitive Services deployment of the OpenAI model."
+}
