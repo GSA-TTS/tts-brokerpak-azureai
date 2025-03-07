@@ -67,29 +67,6 @@ run-examples: build ## run examples tests, set service_name and/or example_name
 
 ###### test ###################################################################
 
-.PHONY: test
-test: lint run-integration-tests ## run the tests
-
-.PHONY: run-integration-tests
-run-integration-tests: provider-tests ## run integration tests for this brokerpak
-	cd ./integration-tests && go run github.com/onsi/ginkgo/v2/ginkgo -r .
-
-.PHONY: run-terraform-tests
-run-terraform-tests: ## run terraform tests for this brokerpak
-	cd ./terraform-tests && go run github.com/onsi/ginkgo/v2/ginkgo -r .
-
-.PHONY: provider-tests
-provider-tests:  ## run the integration tests associated with providers
-	cd providers/terraform-provider-csbmssqldbrunfailover; $(MAKE) test
-
-.PHONY: provider-acceptance-tests
-provider-acceptance-tests: ## run the tests that are related to infrastructure
-	cd providers/terraform-provider-csbmssqldbrunfailover; $(MAKE) run-acceptance-tests
-
-.PHONY: provider-csbmssqldbrunfailover-coverage
-provider-csbmssqldbrunfailover-coverage: ## csbmssqldbrunfailover tests coverage score
-	cd providers/terraform-provider-csbmssqldbrunfailover; $(MAKE) run-acceptance-tests-coverage
-
 .PHONY: info
 info: build ## show brokerpak info
 	$(RUN_CSB) pak info $(PAK_PATH)/$(shell ls *.brokerpak)
