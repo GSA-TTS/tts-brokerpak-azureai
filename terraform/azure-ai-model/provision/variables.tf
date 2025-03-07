@@ -28,7 +28,6 @@ variable "model_name" {
 
 variable "model_version" {
   type        = string
-  default     = "latest"
   description = "The version of the AI model."
 }
 

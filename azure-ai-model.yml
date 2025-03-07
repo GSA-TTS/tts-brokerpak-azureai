@@ -31,7 +31,7 @@ provision:
       required: true
     - field_name: model_version
       type: string
-      default: latest
+      required: true
       details: |
         The version of the AI model. Valid versions for each model are: <ul><li>`o1-preview`: `2024-09-12`</li><li>`o1-mini`: `2024-09-12`</li><li>`gpt-4o`: `2024-11-20`, `2024-08-06`, `2024-05-13`</li><li>`gpt-4o-mini`: `2024-07-18`</li></ul>Not all versions are available in all regions. See the [Azure Global standard model availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#global-standard-model-availability) table.
   computed_inputs:
