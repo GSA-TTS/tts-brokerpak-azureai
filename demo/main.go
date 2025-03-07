@@ -29,7 +29,7 @@ type Credentials struct {
 	DeploymentName string `json:"deployment_name"`
 }
 
-// credentials extracts the information required to authenticate to the Azure Cognitive Services deployment.
+// credentials extracts the information required to authenticate to the Azure Cognitive Services deployment from VCAP_SERVICES.
 func credentials() (Credentials, error) {
 	slog.Info("Loading credentials from VCAP_SERVICES")
 	vcapServices := os.Getenv("VCAP_SERVICES")
