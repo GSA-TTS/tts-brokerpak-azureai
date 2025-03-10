@@ -1,5 +1,5 @@
-output "service_name" {
-  description = "The name of the Azure AI service"
+output "deployment_name" {
+  description = "The name of the Azure Cognitive Services deployment of the OpenAI model."
   value       = azurerm_cognitive_deployment.this.name
 }
 
@@ -22,6 +22,6 @@ output "api_key" {
 
 # Construct a model endpoint URL referencing the deployment name
 output "endpoint_url" {
-  description = "The constructed endpoint URL for the AI model"
-  value       = format("%sopenai/deployments/%s", azurerm_cognitive_account.this.endpoint, var.model_name)
+  description = "The endpoint URL for the AI model."
+  value       = azurerm_cognitive_account.this.endpoint
 }
