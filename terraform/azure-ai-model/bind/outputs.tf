@@ -17,5 +17,5 @@ output "endpoint_url" {
 
 output "deployment_name" {
   description = "The name of the Azure Cognitive Services deployment of the OpenAI model."
-  value       = azurerm_cognitive_deployment.this.name
+  value       = var.deployment_name
 }
