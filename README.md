@@ -1,6 +1,6 @@
-# Azure Brokerpak
+# Azure AI Brokerpak
 
-A brokerpak for the [Cloud Service Broker](https://github.com/pivotal/cloud-service-broker) that provides support for Azure services.
+A brokerpak for the [Cloud Service Broker](https://github.com/pivotal/cloud-service-broker) that makes Azure AI services brokerable, in particular OpenAI's GPT models.
 
 ## Development Requirements
 
