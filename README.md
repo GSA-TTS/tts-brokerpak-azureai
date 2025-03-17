@@ -4,6 +4,7 @@ A brokerpak for the [Cloud Service Broker](https://github.com/pivotal/cloud-serv
 
 ## Development Requirements
 
+* [Install Azure ClI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 * Either an up-to-date version of Go or [Docker](https://docs.docker.com/get-docker/)
 * make - covers development lifecycle steps
 
@@ -16,6 +17,20 @@ To provision services, the brokerpak currently requires Azure account values. Th
 * ARM_CLIENT_ID
 * ARM_CLIENT_SECRET
 
+#### Setup Principal
+
+A principal will be used by the broker to authenticate with Azure. The principal providees the values for `ARM_CLIENT_ID` and `ARM_CLIENT_SECRET`. [Create a Principal](https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure-with-service-principle?tabs=bash) in Azure with contributor role.
+```
+az ad sp create-for-rbac --name <service_principal_name> --role Contributor --scopes /subscriptions/<subscription_id>
+```
+
+Set environment variables.
+```
+export ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+export ARM_TENANT_ID="<azure_subscription_tenant_id>"
+export ARM_CLIENT_ID="<service_principal_appid>"
+export ARM_CLIENT_SECRET="<service_principal_password>"
+```
 ## Development Tools
 
 A Makefile supports the full local development lifecycle for the brokerpak.
