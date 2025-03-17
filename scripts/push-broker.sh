@@ -64,6 +64,18 @@ if [[ ${DB_TLS} ]]; then
   echo "    DB_TLS: ${DB_TLS}" >>$cfmf
 fi
 
+if [[ ${DB_HOST} ]]; then
+  echo "    DB_HOST: ${DB_HOST}" >>$cfmf
+fi
+
+if [[ ${DB_USERNAME} ]]; then
+  echo "    DB_USERNAME: ${DB_USERNAME}" >>$cfmf
+fi
+
+if [[ ${DB_PASSWORD} ]]; then
+  echo "    DB_PASSWORD: ${DB_PASSWORD}" >>$cfmf
+fi
+
 if [[ ${CH_CRED_HUB_URL} ]]; then
   echo "    CH_CRED_HUB_URL: ${CH_CRED_HUB_URL}" >>$cfmf
 fi
